@@ -17,6 +17,17 @@ public class StateCensusAnalyserTest {
             Assertions.assertEquals(29,count);
     }
 
+    @Test
+    public void givenIncorrectFile_ShouldThrowException(){
+        StateCensusAnalyser analyser=new StateCensusAnalyser();
+
+        Assertions.assertThrows(
+                CensusAnalyserException.class,
+                ()->analyser.loadStateCensusData("wrong.csv")
+
+        );
+    }
+
 
 
 }
