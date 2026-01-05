@@ -28,6 +28,16 @@ public class StateCensusAnalyserTest {
         );
     }
 
+    @Test
+    public void givenWrongFile_ShouldThrowException(){
+       StateCensusAnalyser analyser =new StateCensusAnalyser();
+
+       Assertions.assertThrows(
+               CensusAnalyserException.class,
+               ()-> analyser.loadStateCensusData("IndianStateCensusData.txt")
+       );
+    }
+
 
 
 }
